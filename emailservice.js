@@ -3,7 +3,7 @@ import axios from 'axios';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-const mailgunAPIKey = 'd6eda67ad0b8bc379dfc230dfe210fb2-ac3d5f74-fcfd4467';  // Mailgun API anahtarınız
+const mailgunAPIKey = '096045e10040036758df5d92e03b3e85-ac3d5f74-02b191d2';  // Mailgun API anahtarınız
 const domain = 'sandbox2baebbcd90c140fdb077016f16ccea6a.mailgun.org'; // Sandbox domaininiz
 const recipient = 'anindateslimkurye@gmail.com'; // E-posta alıcı adresi, bu adresin onaylı olması gerekir.
 

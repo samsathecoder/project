@@ -23,22 +23,27 @@ const Contact = () => {
         setIsSubmitting(true);
         setResponseMessage('');
     
-       const sendEmail = async (name, email, message) => {
-  const response = await fetch('/api/send-email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ name, email, message })
-  });
-
-  const data = await response.json();
-  if (response.ok) {
-    alert('E-posta başarıyla gönderildi!');
-  } else {
-    alert('E-posta gönderiminde bir hata oluştu');
-  }
-};
+        try {
+          const response = await fetch('http://localhost:5000/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+    
+          const data = await response.json();
+    
+          if (response.status === 200) {
+            setResponseMessage('Mesajınız başarıyla gönderildi!');
+          } else {
+            setResponseMessage('Mesaj gönderilemedi. Lütfen tekrar deneyin.');
+          }
+        } catch (error) {
+          setResponseMessage('Bir hata oluştu. Lütfen tekrar deneyin.');
+        } finally {
+          setIsSubmitting(false);
+        }
       };
 
 

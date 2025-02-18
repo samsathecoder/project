@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import { Truck, Clock, Shield, Phone } from 'lucide-react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 import Lottie from 'react-lottie';
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import { Dialog, DialogActions, DialogContent, DialogTitle, Button } from '@mui/material';
@@ -8,6 +10,7 @@ import { Fab } from '@mui/material'; // FAB butonunu içe aktaralım
 import PhoneIcon from '@mui/icons-material/Phone'; // Telefon simgesi
 import deliveryAnimation from '../assets/animations/araba.json';
 import mapAnimation from '../assets/animations/motor.json';
+import Contact from './Contact.jsx';
 
 const Home = () => {
   const phoneNumber = "905464205366"; // Telefon numaranız
@@ -237,8 +240,7 @@ const Home = () => {
               Hemen ara
             </button>
             <button className="bg-white text-red-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100 flex items-center justify-center">
-              İletişim Formu
-            </button>
+            <Link to="/contact">İletişim Formu</Link>            </button>
           </div>
         </div>
       </div>
