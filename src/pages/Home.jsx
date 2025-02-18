@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { Truck, Clock, Shield, Phone } from 'lucide-react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; // <-- Added this line
 
 import Lottie from 'react-lottie';
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
