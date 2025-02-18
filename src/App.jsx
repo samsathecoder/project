@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import BlogPosts from './components/services.jsx'; 
+import BlogPosts from './components/Services.jsx'; 
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import ServiceDetail from './pages/ServiceSingle';
