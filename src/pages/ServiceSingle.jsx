@@ -6,7 +6,7 @@ import {serviceDetails} from '../data/blogData.js';
 
 const ServiceDetail = () => {
     const { serviceId } = useParams();
-    const service = serviceDetails[serviceId];
+    const service = serviceDetails.find(service => service.id === serviceId);  // Burada find ile serviceId'yi karşılaştırıyoruz
      
     if (!service) {
       return <div>Service not found</div>;

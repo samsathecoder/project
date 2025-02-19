@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { Truck, Clock, Shield, Phone } from 'lucide-react';
+import { Truck, Clock, Shield, Phone, CheckCircle2, Package, Bike, MapPin, ArrowDown, Timer, Zap, Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom'; // <-- Added this line
 
 import Lottie from 'react-lottie';
@@ -9,8 +9,8 @@ import BlogPosts from '../components/Services.jsx';
 import { Fab } from '@mui/material'; // FAB butonunu içe aktaralım
 import PhoneIcon from '@mui/icons-material/Phone'; // Telefon simgesi
 import deliveryAnimation from '../assets/animations/araba.json';
+import banneranimate from '../assets/animations/banneranimate.json'
 import mapAnimation from '../assets/animations/motor.json';
-import Contact from './Contact.jsx';
 
 const Home = () => {
   const phoneNumber = "905464205366"; // Telefon numaranız
@@ -19,6 +19,15 @@ const Home = () => {
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`; // Telefon aramasını başlatmak için
   };
+  const bannerLottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: banneranimate,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   // URL encode işlemi
   const deliveryLottieOptions = {
     loop: true,
@@ -49,9 +58,9 @@ const Home = () => {
     setOpen(false);
   };
   return (
-    <div  id='home' className="pt-18">
+    <div  id='home' className="pt-12">
       {/* Hero Section */}
-      <div className="relative mt-14 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-[600px]">
+      <div className="relative mt-14 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-[650px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-16">
             {/* Left Column - Text */}
@@ -110,87 +119,165 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Services Section */}
-      <div className="py-16 bg-gray-100">
+
+      {/* Delivery Times Section */}
+      <div className="py-20 mt-32 bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900">Gönderi Seçenekleri</h2>
+            <p className="mt-4 text-lg text-gray-600">Size en uygun teslimat seçeneğini seçin</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Truck className="h-8 w-8 text-white" />
+            {/* VIP Kurye */}
+            <div className="relative bg-white rounded-xl shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                  <Rocket className="h-6 w-6 text-white" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Hızlı Teslimat</h3>
-              <p className="text-gray-600">Belirttiğiniz saat aralığında teslim güvencesi</p>
+              <div className="text-center mt-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">VIP Kurye</h3>
+                <div className="text-4xl font-bold text-red-600 mb-4">60 dk</div>
+                <p className="text-gray-600">İstanbul içi ekspres VIP teslimat</p>
+                <div className="mt-6 space-y-2">
+                  <div className="flex items-center justify-center text-gray-600">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
+                    <span>Öncelikli Teslimat</span>
+                  </div>
+                  <div className="flex items-center justify-center text-gray-600">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
+                    <span>Özel Kurye</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-white" />
+
+            {/* Ekspres Kurye */}
+            <div className="relative bg-white rounded-xl shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">7/24 Servis</h3>
-              <p className="text-gray-600">İstediğiniz zaman kurye çağırın</p>
+              <div className="text-center mt-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Ekspres Kurye</h3>
+                <div className="text-4xl font-bold text-blue-600 mb-4">90 dk</div>
+                <p className="text-gray-600">İstanbul içi hızlı teslimat</p>
+                <div className="mt-6 space-y-2">
+                  <div className="flex items-center justify-center text-gray-600">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
+                    <span>Hızlı Teslimat</span>
+                  </div>
+                  <div className="flex items-center justify-center text-gray-600">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
+                    <span>Güvenilir</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-white" />
+
+            {/* Normal Kurye */}
+            <div className="relative bg-white rounded-xl shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                  <Timer className="h-6 w-6 text-white" />
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Güvenli Teslimat</h3>
-              <p className="text-gray-600">Paketleriniz özenle ve tecrübeli kuryelerle taşınıyor.</p>
+              <div className="text-center mt-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Normal Kurye</h3>
+                <div className="text-4xl font-bold text-green-600 mb-4">120 dk</div>
+                <p className="text-gray-600">İstanbul içi standart teslimat</p>
+                <div className="mt-6 space-y-2">
+                  <div className="flex items-center justify-center text-gray-600">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
+                    <span>Ekonomik</span>
+                  </div>
+                  <div className="flex items-center justify-center text-gray-600">
+                    <CheckCircle2 className="h-5 w-5 text-green-500 mr-2" />
+                    <span>Güvenilir</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Section Arrow */}
+          <div className="text-center mt-16">
+            <p className="text-lg text-gray-600 mb-4">Detaylı bilgi ve fiyatlandırma için bize ulaşın</p>
+            <Link to="/contact" className="inline-flex flex-col items-center text-blue-600 hover:text-blue-800 transition-colors">
+              <span className="mb-2">İletişime Geç</span>
+              <ArrowDown className="h-8 w-8 animate-bounce" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    
+      {/* Why Choose Us Section */}
+      <div className="py-20 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Text Content */}
+            <div>
+              <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-blue-600 font-medium mb-6">
+                <Clock className="h-5 w-5 mr-2" />
+                7/24 Hizmet
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Her An Yanınızdayız, 7/24 Hızlı ve Güvenilir Kurye Hizmeti!
+              </h2>
+              <div className="space-y-6 text-gray-600 leading-relaxed">
+                <p>
+                  Acil ve önemli gönderilerinizi güvenle teslim etmek için Her An Kurye olarak her zaman yanınızdayız. 
+                  İster motorlu kurye ile hızlı teslimatlar, ister araçlı kurye ile büyük ve hacimli gönderileriniz için çözüm sunuyoruz. 
+                  Öncelikli gönderi seçeneklerimizle, zamanın çok değerli olduğu durumlarda sizlere üstün hizmet veriyoruz.
+                </p>
+                <p>
+                  Profesyonel ve deneyimli ekibimiz, her türlü teslimat ihtiyacınıza özel çözümlerle, 
+                  gönderilerinizi zamanında ve emniyetle yerine ulaştırır. İşinizi ve taleplerinizi anlayarak, 
+                  hızlı, güvenilir ve uygun fiyatlı kurye çözümleri sunuyoruz.
+                </p>
+                <p>
+                  İster acil teslimat, ister planlı gönderi olsun, her türlü ihtiyacınıza uygun kurye hizmeti için 
+                  bize güvenebilirsiniz. Bizimle iletişime geçin, her an yanınızda olalım!
+                </p>
+              </div>
+          {/*   <div className="mt-8 flex flex-wrap gap-4">
+                <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors flex items-center">
+                  <Phone className="h-5 w-5 mr-2" />
+                  Hemen Bizi Arayın
+                </button>
+                <button className="bg-white text-blue-600 border-2 border-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors">
+                  Detaylı Bilgi
+                </button>
+              </div>*/}
+            </div>
+
+            {/* Animation Column */}
+            <div className="relative">
+              <div className="absolute -top-16 -left-16 w-32 h-32 bg-blue-200 rounded-full opacity-50 blur-2xl"></div>
+              <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-red-200 rounded-full opacity-50 blur-2xl"></div>
+              <div className="relative bg-white rounded-2xl shadow-xl p-8 overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full transform translate-x-16 -translate-y-16"></div>
+                <div className="relative z-10">
+                  <div className="w-full h-96">
+                    <Lottie 
+                      options={bannerLottieOptions}
+                      height={384}
+                      width="100%"
+                    />
+                  </div>
+                  <div className="text-center mt-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Her An Kurye</h3>
+                    <p className="text-gray-600">Güvenilir Teslimat Çözümleri</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Why Choose Us */}
-      <div className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Neden Bizi Seçmelisiniz?</h2>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold">1</span>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-semibold">Profesyonel çözümler</h3>
-                    <p className="text-gray-600">Deneyimli araçlı ve motorlu araç sürücüleri</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold">2</span>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-semibold">Hızlı teslimat</h3>
-                    <p className="text-gray-600">Belirtilen zamanda teslimat güvencesi</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold">3</span>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-semibold">Uygun Fiyatlar</h3>
-                    <p className="text-gray-600">Profesyonel çözümlere makul fiyatlar</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8"
-                alt="Delivery Service"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
 
 
       <BlogPosts id="services" />
@@ -226,6 +313,37 @@ const Home = () => {
         notification={true} // Bildirim simgesi gösterilsin mi? Varsayılan true
         placeholder='Mesajınızı yazınız..'     />
     </div>
+
+
+  {/* Services Section */}
+  <div className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Truck className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Hızlı Teslimat</h3>
+              <p className="text-gray-600">Belirttiğiniz saat aralığında teslim güvencesi</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">7/24 Servis</h3>
+              <p className="text-gray-600">İstediğiniz zaman kurye çağırın</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Güvenli Teslimat</h3>
+              <p className="text-gray-600">Paketleriniz özenle ve tecrübeli kuryelerle taşınıyor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Call to Action */}
       <div className="bg-red-600 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -244,7 +362,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-  
 <Dialog open={open} onClose={handleClose}>
 <DialogTitle>Uyarı</DialogTitle>
 <DialogContent>

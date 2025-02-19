@@ -52,28 +52,26 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Hikayemiz</h2>
-            <p className="text-gray-600 mb-4">
-              2010 yılında İstanbul'da kurulan şirketimiz, müşterilerimize en hızlı ve güvenilir kurye hizmetini
-              sunma vizyonuyla yola çıktı. Başlangıçta küçük bir ekiple başladığımız bu yolculukta, bugün
-              İstanbul'un her köşesinde hizmet veren büyük bir aile haline geldik.
-            </p>
-            <p className="text-gray-600 mb-4">
-              Yıllar içinde edindiğimiz tecrübe ve geliştirdiğimiz teknolojik altyapımız sayesinde,
-              müşterilerimize en kaliteli hizmeti sunmaya devam ediyoruz. Motokurye hizmetinden ekspres
-              teslimatlarımıza kadar her alanda profesyonel çözümler üretiyoruz.
-            </p>
-            <p className="text-gray-600">
-              Bugün, İstanbul'un en güvenilir kurye şirketlerinden biri olarak, müşterilerimizin
-              beklentilerini aşmaya ve sektörde yeni standartlar belirlemeye devam ediyoruz.
-            </p>
-          </div>
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0"
-              alt="Ekibimiz"
-              className="rounded-lg shadow-lg"
-            />
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Her An Yanınızdayız, 7/24 Hızlı ve Güvenilir Kurye Hizmeti!
+              </h2>
+              <div className="space-y-6 text-gray-600 leading-relaxed">
+                <p>
+                  Acil ve önemli gönderilerinizi güvenle teslim etmek için Her An Kurye olarak her zaman yanınızdayız. 
+                  İster motorlu kurye ile hızlı teslimatlar, ister araçlı kurye ile büyük ve hacimli gönderileriniz için çözüm sunuyoruz. 
+                  Öncelikli gönderi seçeneklerimizle, zamanın çok değerli olduğu durumlarda sizlere üstün hizmet veriyoruz.
+                </p>
+                <p>
+                  Profesyonel ve deneyimli ekibimiz, her türlü teslimat ihtiyacınıza özel çözümlerle, 
+                  gönderilerinizi zamanında ve emniyetle yerine ulaştırır. İşinizi ve taleplerinizi anlayarak, 
+                  hızlı, güvenilir ve uygun fiyatlı kurye çözümleri sunuyoruz.
+                </p>
+                <p>
+                  İster acil teslimat, ister planlı gönderi olsun, her türlü ihtiyacınıza uygun kurye hizmeti için 
+                  bize güvenebilirsiniz. Bizimle iletişime geçin, her an yanınızda olalım!
+                </p>
+              </div>
+         
           </div>
         </div>
       </div>
