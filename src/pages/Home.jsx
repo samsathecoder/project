@@ -228,7 +228,7 @@ const Home = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Acil ve önemli gönderilerinizi güvenle teslim etmek için Her An Kurye olarak her zaman yanınızdayız. 
+                  Acil ve önemli gönderilerinizi güvenle teslim etmek için Anında Teslim Kurye olarak her zaman yanınızdayız. 
                   İster motorlu kurye ile hızlı teslimatlar, ister araçlı kurye ile büyük ve hacimli gönderileriniz için çözüm sunuyoruz. 
                   Öncelikli gönderi seçeneklerimizle, zamanın çok değerli olduğu durumlarda sizlere üstün hizmet veriyoruz.
                 </p>
@@ -260,15 +260,17 @@ const Home = () => {
               <div className="relative bg-white rounded-2xl shadow-xl p-8 overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full transform translate-x-16 -translate-y-16"></div>
                 <div className="relative z-10">
-                  <div className="w-full h-96">
-                    <Lottie 
+                  <div className="w-96 h-96  overflow-hidden">
+                   {/*
+                   */} <Lottie 
                       options={bannerLottieOptions}
                       height={384}
                       width="100%"
+                      style={{ objectFit: 'contain' }}
                     />
                   </div>
                   <div className="text-center mt-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Her An Kurye</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Anında Teslimat Kurye</h3>
                     <p className="text-gray-600">Güvenilir Teslimat Çözümleri</p>
                   </div>
                 </div>

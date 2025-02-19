@@ -57,7 +57,7 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Acil ve önemli gönderilerinizi güvenle teslim etmek için Her An Kurye olarak her zaman yanınızdayız. 
+                  Acil ve önemli gönderilerinizi güvenle teslim etmek için Anında Teslimat Kurye olarak her zaman yanınızdayız. 
                   İster motorlu kurye ile hızlı teslimatlar, ister araçlı kurye ile büyük ve hacimli gönderileriniz için çözüm sunuyoruz. 
                   Öncelikli gönderi seçeneklerimizle, zamanın çok değerli olduğu durumlarda sizlere üstün hizmet veriyoruz.
                 </p>
