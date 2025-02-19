@@ -6,3 +6,8 @@
 .nav {
     background-color: #1e3a8a; /* Mavi renk */
   }
+
+  html, body {
+    overflow-x: hidden; /* Yalnızca yatay taşmayı engeller */
+  }
+  
