@@ -21,6 +21,11 @@ const Home = () => {
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`; // Telefon aramasını başlatmak için
   };
+
+  const handleClick = () => {
+    // WhatsApp'a yönlendirme
+    window.location.href = "https://wa.me/905464205366?text=Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız.";
+  };
   const bannerLottieOptions = {
     loop: true,
     autoplay: true,
@@ -90,8 +95,8 @@ const Home = () => {
     {/* Hero Section */}
     <div className="relative pt-12  bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-[650px]">
       {/* Decorative mobile line effect */}
-      <div className="absolute right-0 top-36 w-1/2 h-[2px] bg-gradient-to-r from-blue-400 to-transparent md:hidden"></div>
-      <div className="absolute left-0 top-72 w-1/2 h-[2px] bg-gradient-to-l from-blue-400 to-transparent md:hidden"></div>
+      <div className="absolute right-0 top-40 w-1/2 h-[2px] bg-gradient-to-r from-blue-400 to-transparent md:hidden"></div>
+      <div className="absolute left-0 top-80 w-1/2 h-[2px] bg-gradient-to-l from-blue-400 to-transparent md:hidden"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-16">
@@ -101,7 +106,7 @@ const Home = () => {
               Anında Teslim Kurye
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              7/24 Özel Kurye Hizmetiyle paketleriniz güvenle alıcısında.
+              7/24 Özel Kurye Hizmetiyle paketleriniz zamanında ve güvenle alıcısında.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <button onClick={handleCall} className="bg-red-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-red-700 flex items-center">
@@ -122,7 +127,7 @@ const Home = () => {
                 {/* Diagonal Divider Line - visible only on desktop */}
                 <div className="absolute left-1/2 top-1/2 w-50 md:w-[100%] h-1 bg-gradient-to-r from-blue-400 to-blue-300 transform -rotate-45 z-10 hidden md:block"></div>
                 <div className="relative z-20">
-                  <div className="w-full max-w-[200px] md:w-64 h-64 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
+                  <div className="w-full max-w-[200px] md:w-64 h-48 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
                     <div className="w-full h-full rounded-full overflow-hidden">
                       <Lottie options={mapLottieOptions} />
                     </div>
@@ -137,7 +142,7 @@ const Home = () => {
               {/* Right Column - Circle Animation */}
               <div className="relative">
                 <div className="relative z-20">
-                  <div className="w-full max-w-[200px] md:w-64 h-64 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
+                  <div className="w-full max-w-[200px] md:w-64 h-48 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
                     <div className="w-full h-full rounded-full overflow-hidden">
                       <Lottie options={deliveryLottieOptions} />
                     </div>
@@ -155,6 +160,7 @@ const Home = () => {
     </div>
 
   {/* Services Section */}
+{/* Services Section */}
 <div className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
@@ -164,42 +170,39 @@ const Home = () => {
       {/* First Animation */}
       <div className="col-span-1 md:col-span-1">
         <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
-          <div className="aspect-square relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
+          <div className="aspect-ratio relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
             <Lottie options={pickLottieOptions} />
           </div>
           <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Paketinizi alıyoruz</h3>
-          <p className="text-gray-600 mt-2 text-center text-sm md:text-base">
-          </p>
+          <p className="text-gray-600 mt-2 text-center text-sm md:text-base"></p>
         </div>
       </div>
 
       {/* Second Animation */}
       <div className="col-span-1 md:col-span-1">
         <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
-          <div className="aspect-square relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
+          <div className="aspect-ratio relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
             <Lottie options={waayLottieOptions} />
           </div>
           <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">kurye yola çıkıyor..</h3>
-          <p className="text-gray-600 mt-2 text-center text-sm md:text-base">
-            
-          </p>
+          <p className="text-gray-600 mt-2 text-center text-sm md:text-base"></p>
         </div>
       </div>
 
-      {/* Third Animation */}
-      <div className="col-span-2 sm:col-span-2 md:col-span-1 mx-auto w-full max-w-sm">
-        <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
-          <div className="aspect-square relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
+      {/* Third Animation (Centered) */}
+      <div className="col-span-1 md:col-span-1 flex justify-center items-center">
+      <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+      <div className="aspect-ratio relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
             <Lottie options={deliverypackLottieOptions} />
           </div>
           <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Paketiniz alıcısında</h3>
-          <p className="text-gray-600 mt-2 text-center text-sm md:text-base">
-          </p>
+          <p className="text-gray-600 mt-2 text-center text-sm md:text-base"></p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
       {/* Delivery Times Section */}
       <div className="py-20  bg-gradient-to-br from-blue-50 to-blue-100">
@@ -385,24 +388,25 @@ const Home = () => {
       </Fab>
     </div>
       <FloatingWhatsApp
-        phoneNumber="905464205366" // WhatsApp numaranız (uluslararası formatta)
-        accountName="Anında teslim kurye" // Hesap adı (görünür isim)
-        statusMessage='En hızlı şekilde geri dönüş yapacağız.'
-        message={message} // Başlangıç mesajı
-        chatMessage="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız." // Buton tıklanınca mesaj
-        title="Tıklayın ve bizimle İletişime Geçin" // Butonun üzerine geldiğinde gösterilecek başlık
-        allowClickAway={true} // Butona tıklanınca buton kaybolur mu? Varsayılan true
-        avatar="https://your-avatar-image-url.com" // Avatar resmi
-        notification={true} // Bildirim simgesi gösterilsin mi? Varsayılan true
-        placeholder='Mesajınızı yazınız..'     />
-    </div>
-
+       phoneNumber="905464205366" // WhatsApp numaranız (uluslararası formatta)
+       accountName="Anında teslim kurye" // Hesap adı (görünür isim)
+       statusMessage="En hızlı şekilde geri dönüş yapacağız."
+       message="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
+       chatMessage="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
+       title="Tıklayın ve bizimle İletişime Geçin"
+       allowClickAway={true}
+       avatar="https://your-avatar-image-url.com"
+       notification={true}
+       placeholder="Mesajınızı yazınız.."
+       onClick={handleClick} // onClick ile yönlendirme
+     />
+   </div>
 
 
       {/* Call to Action */}
       <div className="bg-red-600 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Hazırsanız yola çıkalım?</h2>
+          <h2 className="text-3xl font-bold mb-4">Hazırsanız yola çıkalım mı?</h2>
           <p className="text-xl mb-8">Hizmetlerimizden yararlanmak ve bilgi almak için hemen iletişim formumuzu doldurun veya bizi arayın.</p>
           
           {/* Flex Container for Buttons */}

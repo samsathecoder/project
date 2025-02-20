@@ -97,7 +97,7 @@ const ServiceDetail = () => {
             </p>
             <div className="flex justify-center space-x-4">
               <a 
-                href="tel:+1234567890"
+                href="+905464205366"
                 className="bg-red-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-red-700 transition-colors duration-300 inline-flex items-center"
               >
                 <ArrowLeft className="h-5 w-5 mr-2" />
