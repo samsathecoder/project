@@ -386,21 +386,22 @@ const Home = () => {
       >
         <PhoneIcon />
       </Fab>
-    </div>
+      <div>
+      {/* Floating WhatsApp Button */}
       <FloatingWhatsApp
-       phoneNumber="905464205366" // WhatsApp numaranız (uluslararası formatta)
-       accountName="Anında teslim kurye" // Hesap adı (görünür isim)
-       statusMessage="En hızlı şekilde geri dönüş yapacağız."
-       message="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
-       chatMessage="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
-       title="Tıklayın ve bizimle İletişime Geçin"
-       allowClickAway={true}
-       avatar="https://your-avatar-image-url.com"
-       notification={true}
-       placeholder="Mesajınızı yazınız.."
-       onClick={handleClick} // onClick ile yönlendirme
-     />
-   </div>
+        phoneNumber="905464205366" // WhatsApp numaranız (uluslararası formatta)
+        accountName="Anında teslim kurye" // Hesap adı (görünür isim)
+        statusMessage="En hızlı şekilde geri dönüş yapacağız."
+        message="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
+        chatMessage="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
+        title="Tıklayın ve bizimle İletişime Geçin"
+        allowClickAway={true}
+        avatar="https://your-avatar-image-url.com"
+        notification={true}
+        placeholder="Mesajınızı yazınız.."
+        onClick={handleClick} // onClick ile yönlendirme
+      />
+    </div>
 
 
       {/* Call to Action */}
