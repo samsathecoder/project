@@ -11,7 +11,9 @@ import PhoneIcon from '@mui/icons-material/Phone'; // Telefon simgesi
 import deliveryAnimation from '../assets/animations/araba.json';
 import banneranimate from '../assets/animations/banneranimate.json'
 import mapAnimation from '../assets/animations/motor.json';
-
+import delivery from '../assets/animations/deliveryp.json';
+import pick from '../assets/animations/pick.json';
+import way from '../assets/animations/waay.json';
 const Home = () => {
   const phoneNumber = "905464205366"; // Telefon numaranız
 
@@ -38,6 +40,32 @@ const Home = () => {
     },
   };
 
+  const pickLottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: pick,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };  
+  const waayLottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: way,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };  
+  
+  const deliverypackLottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: delivery,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   const mapLottieOptions = {
     loop: true,
     autoplay: true,
@@ -58,70 +86,123 @@ const Home = () => {
     setOpen(false);
   };
   return (
-    <div  id='home' className="pt-12">
-      {/* Hero Section */}
-      <div className="relative mt-14 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-[650px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-16">
-            {/* Left Column - Text */}
-            <div className="text-white">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                Anında Teslim Kurye
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-gray-200">
-                7/24 Özel Kurye Hizmetiyle paketleriniz güvenle alıcısında.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <button onClick={handleCall} className="bg-red-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-red-700 flex items-center">
-                  <Phone className="mr-2" />
-                  Hemen ara
-                </button>
-                <button onClick={handleOpen}  className="bg-white text-red-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100">
-                  Teklif Al
-                </button>
-              </div>
+<div id='home' className="pt-12">
+    {/* Hero Section */}
+    <div className="relative pt-12  bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-[650px]">
+      {/* Decorative mobile line effect */}
+      <div className="absolute right-0 top-36 w-1/2 h-[2px] bg-gradient-to-r from-blue-400 to-transparent md:hidden"></div>
+      <div className="absolute left-0 top-72 w-1/2 h-[2px] bg-gradient-to-l from-blue-400 to-transparent md:hidden"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center py-16">
+          {/* Left Column - Text */}
+          <div className="text-white order-1 ">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Anında Teslim Kurye
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-gray-200">
+              7/24 Özel Kurye Hizmetiyle paketleriniz güvenle alıcısında.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <button onClick={handleCall} className="bg-red-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-red-700 flex items-center">
+                <Phone className="mr-2" />
+                Hemen ara
+              </button>
+              <button onClick={handleOpen} className="bg-white text-red-600 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-100">
+                Teklif Al
+              </button>
             </div>
+          </div>
 
-            {/* Middle Column - Circle Animation */}
-            <div className="relative">
-              {/* Diagonal Divider Line */}
-              <div className="absolute left-1/2 top-1/2 w-50 md:w-[100%] h-1 bg-gradient-to-r from-blue-400 to-blue-300 transform -rotate-45 z-50"></div>
-              
-              <div className="relative z-20">
-                <div className="w-64 h-64 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
-                  <div className="w-full h-full rounded-full overflow-hidden">
-                    <Lottie options={mapLottieOptions} />
+          {/* Animation Columns Container */}
+          <div className="col-span-2 md:col-span-2 order-2 mt-8 md:mt-0">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-8">
+              {/* Middle Column - Circle Animation */}
+              <div className="relative">
+                {/* Diagonal Divider Line - visible only on desktop */}
+                <div className="absolute left-1/2 top-1/2 w-50 md:w-[100%] h-1 bg-gradient-to-r from-blue-400 to-blue-300 transform -rotate-45 z-10 hidden md:block"></div>
+                <div className="relative z-20">
+                  <div className="w-full max-w-[200px] md:w-64 h-64 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
+                    <div className="w-full h-full rounded-full overflow-hidden">
+                      <Lottie options={mapLottieOptions} />
+                    </div>
+                  </div>
+                  <div className="text-center mt-4">
+                    <h3 className="text-white text-xl font-semibold">Motorlu kurye</h3>
+                    <p className="text-gray-300 mt-2">Hafif ve hızlı ulaşması gereken teslimatlar için motorlu kuryeler</p>
                   </div>
                 </div>
-                <div className="text-center mt-4">
-                <h3 className="text-white text-xl font-semibold">Motorlu kurye </h3>
-                  <p className="text-gray-300 mt-2">Hafif ve hızlı ulaşması gereken teslimatlar için motorlu kuryeler</p>
-                  </div>
               </div>
-            </div>
 
-            {/* Right Column - Circle Animation */}
-            <div className="relative mt-16 md:mt-32">
-              <div className="relative z-20">
-                <div className="w-64 h-64 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
-                  <div className="w-full h-full rounded-full overflow-hidden">
-                    <Lottie options={deliveryLottieOptions} />
+              {/* Right Column - Circle Animation */}
+              <div className="relative">
+                <div className="relative z-20">
+                  <div className="w-full max-w-[200px] md:w-64 h-64 mx-auto rounded-full bg-white/10 backdrop-blur-sm p-4 shadow-lg">
+                    <div className="w-full h-full rounded-full overflow-hidden">
+                      <Lottie options={deliveryLottieOptions} />
+                    </div>
+                  </div>
+                  <div className="text-center mt-4">
+                    <h3 className="text-white text-xl font-semibold">Araçlı kurye</h3>
+                    <p className="text-gray-300 mt-2">Ağır paketleriniz için araçlı kuryeler</p>
                   </div>
                 </div>
-                <div className="text-center mt-4">
-                <h3 className="text-white text-xl font-semibold">Araçlı kurye</h3>
-                  <p className="text-gray-300 mt-2">ağır paketleriniz için araçlı kuryeler</p>
-           
-                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
+  {/* Services Section */}
+<div className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+      Adımlar
+    </h2>
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+      {/* First Animation */}
+      <div className="col-span-1 md:col-span-1">
+        <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+          <div className="aspect-square relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
+            <Lottie options={pickLottieOptions} />
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Paketinizi alıyoruz</h3>
+          <p className="text-gray-600 mt-2 text-center text-sm md:text-base">
+          </p>
+        </div>
+      </div>
+
+      {/* Second Animation */}
+      <div className="col-span-1 md:col-span-1">
+        <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+          <div className="aspect-square relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
+            <Lottie options={waayLottieOptions} />
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">kurye yola çıkıyor..</h3>
+          <p className="text-gray-600 mt-2 text-center text-sm md:text-base">
+            
+          </p>
+        </div>
+      </div>
+
+      {/* Third Animation */}
+      <div className="col-span-2 sm:col-span-2 md:col-span-1 mx-auto w-full max-w-sm">
+        <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+          <div className="aspect-square relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
+            <Lottie options={deliverypackLottieOptions} />
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Paketiniz alıcısında</h3>
+          <p className="text-gray-600 mt-2 text-center text-sm md:text-base">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Delivery Times Section */}
-      <div className="py-20 mt-32 bg-gradient-to-br from-blue-50 to-blue-100">
+      <div className="py-20  bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900">Gönderi Seçenekleri</h2>
@@ -317,34 +398,6 @@ const Home = () => {
     </div>
 
 
-  {/* Services Section */}
-  <div className="py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Truck className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Hızlı Teslimat</h3>
-              <p className="text-gray-600">Belirttiğiniz saat aralığında teslim güvencesi</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">7/24 Servis</h3>
-              <p className="text-gray-600">İstediğiniz zaman kurye çağırın</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Güvenli Teslimat</h3>
-              <p className="text-gray-600">Paketleriniz özenle ve tecrübeli kuryelerle taşınıyor.</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Call to Action */}
       <div className="bg-red-600 py-14">

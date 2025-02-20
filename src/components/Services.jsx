@@ -2,31 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Link bileşeni ile yönlendirme yapacağız
 import  '../css/blogpost.css';
-import motokurye from '../assets/images/motokurye.jpg'
-import drugdriver from '../assets/images/drugdriver.jpg'
-import motovale from '../assets/images/motovale.jpg'
+
 import {serviceDetails} from '../data/blogData.js'
-const blogServices = [
-  {
-    id: 'moto-kurye', 
-    title: 'Moto Kurye',
-    image: motokurye,
-    description: 'Motokurye Hizmeti: Hızlı ve Güvenilir Gönderi Teslimatı. İstanbul\'un hızlı tempolu iş dünyasında, zamanın önemi her zamankinden daha fazla hissediliyor.'
-  },
- 
-  {
-    id: 'eczane-kurye',
-    title: 'Eczane Kurye',
-    image: drugdriver ,
-    description: 'Eczane Kurye Hizmetleri: Sağlık Ürünlerinizin Hızlı ve Güvenilir Taşımacılığı. Eczane kurye hizmetleri, eczanelerin acil ilaç teslimatı için kritik bir rol oynar.'
-  },
-  {
-    id: 'motor-vale',
-    title: 'Motor Vale',
-    image: motovale,
-    description: 'Motor Vale Hizmetleri: İstanbul\'un Trafik Sorununu Hafifleten Pratik Çözüm. İstanbul gibi yoğun bir şehirde, park sorunu işletmeler için büyük bir zorluktur.'
-  }
-];
 
 
 const BlogPosts = () => { 

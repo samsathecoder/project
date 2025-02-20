@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,13 +11,17 @@ const ServiceDetail = () => {
     if (!service) {
       return <div>Service not found</div>;
     }
+    useEffect(() => {
+      // Sayfa yüklendiğinde en üst kısma kaydır
+      window.scrollTo(50, 50);
+    }, []);
   
 
     return (
-      <div className="pt-14">
+      <div className=" ">
         {/* Hero Section with Gradient Background */}
-        <div className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-[400px] -mt-24">
-          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-[400px]">
+        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
             <Link 
               to="/" 

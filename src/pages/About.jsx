@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Users, Lightbulb, Target } from 'lucide-react';
+import { CheckCircle2, Users, Lightbulb, Target ,Truck,Clock,Shield} from 'lucide-react';
 
 const About = () => {
   return (
@@ -76,7 +76,35 @@ const About = () => {
         </div>
       </div>
 
-      {/* Values Section */}
+  {/* Services Section */}
+  <div className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Truck className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Hızlı Teslimat</h3>
+              <p className="text-gray-600">Belirttiğiniz saat aralığında teslim güvencesi</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">7/24 Servis</h3>
+              <p className="text-gray-600">İstediğiniz zaman kurye çağırın</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Güvenli Teslimat</h3>
+              <p className="text-gray-600">Paketleriniz özenle ve tecrübeli kuryelerle taşınıyor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Values Section 
       <div className="bg-gray-100 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Değerlerimiz</h2>
@@ -110,7 +138,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };
