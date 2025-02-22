@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { CheckCircle2, Users, Lightbulb, Target ,Truck,Clock,Shield} from 'lucide-react';
 
 const About = () => {
 
      useEffect(() => {
         // Sayfa yüklendiğinde en üst kısma kaydır
-        window.scrollTo(50, 50);
+        window.scrollTo(0,0);
       }, []);
     
   return (
