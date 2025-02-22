@@ -14,6 +14,7 @@ import mapAnimation from '../assets/animations/motor.json';
 import delivery from '../assets/animations/deliveryp.json';
 import pick from '../assets/animations/pick.json';
 import way from '../assets/animations/waay.json';
+import pickadress from '../assets/animations/pickadress.json';
 const Home = () => {
   const phoneNumber = "905464205366"; // Telefon numaranız
 
@@ -40,6 +41,14 @@ const Home = () => {
     loop: true,
     autoplay: true,
     animationData: deliveryAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+  const pickadressLottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: pickadress,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
@@ -161,19 +170,32 @@ const Home = () => {
 
   {/* Services Section */}
 {/* Services Section */}
-<div className="py-16 bg-gradient-to-br from-blue-50 to-blue-100">
+<div className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
       Adımlar
     </h2>
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
       {/* First Animation */}
+
+
+      
       <div className="col-span-1 md:col-span-1">
         <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
           <div className="aspect-ratio relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
             <Lottie options={pickLottieOptions} />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Paketinizi alıyoruz</h3>
+          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Adresinize geliyoruz</h3>
+          <p className="text-gray-600 mt-2 text-center text-sm md:text-base"></p>
+        </div>
+      </div>
+
+      <div className="col-span-1 md:col-span-1 ">
+      <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
+      <div className="aspect-ratio relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
+            <Lottie options={pickadressLottieOptions} />
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Gönderinizi alıyoruz</h3>
           <p className="text-gray-600 mt-2 text-center text-sm md:text-base"></p>
         </div>
       </div>
@@ -190,15 +212,16 @@ const Home = () => {
       </div>
 
       {/* Third Animation (Centered) */}
-      <div className="col-span-1 md:col-span-1 flex justify-center items-center">
+      <div className="col-span-1 md:col-span-1 ">
       <div className="bg-white rounded-full shadow-xl p-6 transform hover:scale-105 transition-transform duration-300">
       <div className="aspect-ratio relative bg-gradient-to-br from-blue-50 to-blue-100 rounded-full overflow-hidden">
             <Lottie options={deliverypackLottieOptions} />
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">Paketiniz alıcısında</h3>
+          <h3 className="text-xl font-bold text-gray-900 mt-4 text-center">gönderiniz alıcısında</h3>
           <p className="text-gray-600 mt-2 text-center text-sm md:text-base"></p>
         </div>
       </div>
+    
     </div>
   </div>
 </div>
@@ -386,22 +409,21 @@ const Home = () => {
       >
         <PhoneIcon />
       </Fab>
-      <div>
-      {/* Floating WhatsApp Button */}
-      <FloatingWhatsApp
-        phoneNumber="905464205366" // WhatsApp numaranız (uluslararası formatta)
-        accountName="Anında teslim kurye" // Hesap adı (görünür isim)
-        statusMessage="En hızlı şekilde geri dönüş yapacağız."
-        message="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
-        chatMessage="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
-        title="Tıklayın ve bizimle İletişime Geçin"
-        allowClickAway={true}
-        avatar="https://your-avatar-image-url.com"
-        notification={true}
-        placeholder="Mesajınızı yazınız.."
-        onClick={handleClick} // onClick ile yönlendirme
-      />
     </div>
+      <FloatingWhatsApp
+       phoneNumber="905464205366" // WhatsApp numaranız (uluslararası formatta)
+       accountName="Anında teslim kurye" // Hesap adı (görünür isim)
+       statusMessage="En hızlı şekilde geri dönüş yapacağız."
+       message="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
+       chatMessage="Merhaba kurye hizmetimiz hakkında bilgi almak için bize yazın, en kısa sürede geri dönüş yapacağız."
+       title="Tıklayın ve bizimle İletişime Geçin"
+       allowClickAway={true}
+       avatar="https://your-avatar-image-url.com"
+       notification={true}
+       placeholder="Mesajınızı yazınız.."
+       onClick={handleClick} // onClick ile yönlendirme
+     />
+   </div>
 
 
       {/* Call to Action */}

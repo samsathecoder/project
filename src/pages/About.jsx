@@ -2,6 +2,12 @@ import React from 'react';
 import { CheckCircle2, Users, Lightbulb, Target ,Truck,Clock,Shield} from 'lucide-react';
 
 const About = () => {
+
+     useEffect(() => {
+        // Sayfa yüklendiğinde en üst kısma kaydır
+        window.scrollTo(50, 50);
+      }, []);
+    
   return (
     <div className="pt-14">
       {/* Hero Section */}
